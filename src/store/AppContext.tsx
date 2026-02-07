@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useCallback, useMemo } from 'react';
 import type { Video, Task, Idea, AppState, TaskStatus } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { initialVideos, initialTasks, initialIdeas } from '../data/initialData';
+import { initialVideos, initialTasks, initialIdeas, DATA_VERSION } from '../data/initialData';
 
 interface AppContextType {
   state: AppState;
@@ -33,6 +33,16 @@ const STATUS_CYCLE: Record<TaskStatus, TaskStatus> = {
 };
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
+  // Auto-reset localStorage when DATA_VERSION changes (forces new initial data)
+  const storedVersion = localStorage.getItem('kaniel-cc-dataVersion');
+  if (storedVersion !== String(DATA_VERSION)) {
+    localStorage.removeItem('kaniel-cc-videos');
+    localStorage.removeItem('kaniel-cc-tasks');
+    localStorage.removeItem('kaniel-cc-ideas');
+    localStorage.removeItem('kaniel-cc-lastSync');
+    localStorage.setItem('kaniel-cc-dataVersion', String(DATA_VERSION));
+  }
+
   const [videos, setVideos] = useLocalStorage<Video[]>('videos', initialVideos);
   const [tasks, setTasks] = useLocalStorage<Task[]>('tasks', initialTasks);
   const [ideas, setIdeas] = useLocalStorage<Idea[]>('ideas', initialIdeas);
@@ -196,6 +206,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setTasks(initialTasks);
     setIdeas(initialIdeas);
     setLastSync(new Date().toISOString());
+    localStorage.setItem('kaniel-cc-dataVersion', String(DATA_VERSION));
   }, [setVideos, setTasks, setIdeas, setLastSync]);
 
   // --- Build state & context value ---
