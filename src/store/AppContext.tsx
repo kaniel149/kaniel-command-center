@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useCallback, useMemo } from 'react';
-import type { Video, Task, Idea, AppState, TaskStatus } from '../types';
+import type { Video, VideoScripts, Task, Idea, AppState, TaskStatus } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { initialVideos, initialTasks, initialIdeas, DATA_VERSION } from '../data/initialData';
 
@@ -8,6 +8,7 @@ interface AppContextType {
   // Video actions
   toggleVideoStage: (videoId: string, stage: keyof Video['stages']) => void;
   updateVideoNotes: (videoId: string, notes: string) => void;
+  updateVideoScript: (videoId: string, scripts: VideoScripts) => void;
   addVideo: (video: Omit<Video, 'id'>) => void;
   deleteVideo: (videoId: string) => void;
   // Task actions
@@ -68,6 +69,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     (videoId: string, notes: string) => {
       setVideos((prev) =>
         prev.map((v) => (v.id === videoId ? { ...v, notes } : v))
+      );
+      setLastSync(new Date().toISOString());
+    },
+    [setVideos, setLastSync]
+  );
+
+  const updateVideoScript = useCallback(
+    (videoId: string, scripts: VideoScripts) => {
+      setVideos((prev) =>
+        prev.map((v) => (v.id === videoId ? { ...v, scripts } : v))
       );
       setLastSync(new Date().toISOString());
     },
@@ -177,24 +188,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     (json: string): boolean => {
       try {
         const data = JSON.parse(json) as AppState;
-
-        if (!data.videos || !data.tasks || !data.ideas) {
-          console.warn('Import failed: missing required fields');
-          return false;
-        }
-
-        if (!Array.isArray(data.videos) || !Array.isArray(data.tasks) || !Array.isArray(data.ideas)) {
-          console.warn('Import failed: videos, tasks, and ideas must be arrays');
-          return false;
-        }
-
+        if (!data.videos || !data.tasks || !data.ideas) return false;
+        if (!Array.isArray(data.videos) || !Array.isArray(data.tasks) || !Array.isArray(data.ideas)) return false;
         setVideos(data.videos);
         setTasks(data.tasks);
         setIdeas(data.ideas);
         setLastSync(data.lastSync || new Date().toISOString());
         return true;
-      } catch (error) {
-        console.warn('Import failed: invalid JSON', error);
+      } catch {
         return false;
       }
     },
@@ -221,6 +222,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       state,
       toggleVideoStage,
       updateVideoNotes,
+      updateVideoScript,
       addVideo,
       deleteVideo,
       cycleTaskStatus,
@@ -234,20 +236,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       resetState,
     }),
     [
-      state,
-      toggleVideoStage,
-      updateVideoNotes,
-      addVideo,
-      deleteVideo,
-      cycleTaskStatus,
-      addTask,
-      deleteTask,
-      updateTask,
-      addIdea,
-      deleteIdea,
-      exportState,
-      importState,
-      resetState,
+      state, toggleVideoStage, updateVideoNotes, updateVideoScript,
+      addVideo, deleteVideo, cycleTaskStatus, addTask, deleteTask,
+      updateTask, addIdea, deleteIdea, exportState, importState, resetState,
     ]
   );
 

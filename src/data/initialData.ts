@@ -1,7 +1,7 @@
 import type { Video, Task, Idea } from '../types';
 
 // Bump this version whenever initialData changes to force browser refresh
-export const DATA_VERSION = 3;
+export const DATA_VERSION = 4;
 
 export const initialVideos: Video[] = [
   {
@@ -10,7 +10,68 @@ export const initialVideos: Video[] = [
     title: 'AI First Intro',
     titleHe: 'הקדמה - AI First',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 15-60s. Hook: "אני לא מתכנת. אני בן אדם שבנה עסק, ועכשיו סוכני AI מנהלים לי את החיים." הראה חיים באי + Claude על המסך. CTA: "תעקוב ותראה איך"',
+    notes: 'Reel ראשון! הזדמנות ליצור רושם ראשוני. אותנטי, אנרגטי, ישיר.',
+    filmingGuide: `סוג: Reel 30-45 שניות
+מיקום: בבית, פינת צילום (מול חלון, רקע נקי)
+ציוד: אייפון על חצובה + מיקרופון לבליר
+
+הגדרות אייפון:
+1. 1080p / 30fps / 9:16 (vertical)
+2. נעילת AE-AF: לחץ ארוך על הפנים
+3. מצב טיסה!
+4. כיבוי כל התראות
+
+מבנה הסרטון:
+1. [0-3s] HOOK - פתיחה חזקה, ישר לעניין
+2. [3-20s] הצג את עצמך + מה AI עושה לך
+3. [20-35s] "אם אני יכול - גם אתה"
+4. [35-40s] CTA: "תעקוב ותראה איך"
+
+טיפ: תסתכל ישר לעדשה, לא למסך. חיוך קל. כתפיים אחורה.
+טיפ: אנרגיה +15%! המצלמה מכבה אישיות.
+⚠️ צלם 2-3 takes. אל תשאף לשלמות.
+⏱️ 10-15 דקות הקלטה ← 35 שניות תוצאה`,
+    scripts: {
+      he: `אני לא מתכנת. אני בן אדם שבנה עסק סולארי ל-10 מליון שקל.
+
+איבדתי את אחי ב-7 באוקטובר. עברתי 400 יום מילואים.
+
+היום? אני חי בקו פנגאן, תאילנד, עם אשתי ושלושת הילדים שלי. וסוכני AI מנהלים לי את החיים.
+
+כל בוקר אני מקבל פודקאסט חדשות מותאם אישית. תוכנית אימון. רשימת קניות. ומשימות לעסק.
+
+בלי שנגעתי בכלום. אוטומטי.
+
+אם אני יכול - גם אתה יכול.
+
+תעקוב - ותראה בדיוק איך.`,
+      en: `I'm not a programmer. I built a solar company to 10 million shekels in revenue.
+
+I lost my brother on October 7th. I served 400 days in the reserves.
+
+Today? I live in Koh Phangan, Thailand, with my wife and three kids. And AI agents run my life.
+
+Every morning I get a personalized news podcast. A workout plan. A grocery list. And my top business tasks.
+
+Without touching anything. Automatic.
+
+If I can do it - so can you.
+
+Follow me - and I'll show you exactly how.`,
+      es: `No soy programador. Construí una empresa solar que facturó 10 millones de shekels.
+
+Perdí a mi hermano el 7 de octubre. Serví 400 días en las reservas.
+
+¿Hoy? Vivo en Koh Phangan, Tailandia, con mi esposa y tres hijos. Y agentes de IA manejan mi vida.
+
+Cada mañana recibo un podcast de noticias personalizado. Plan de entrenamiento. Lista de compras. Y mis tareas de negocio.
+
+Sin tocar nada. Automático.
+
+Si yo puedo, tú también puedes.
+
+Sígueme - y te muestro exactamente cómo.`,
+    },
   },
   {
     id: 'v002',
@@ -18,7 +79,79 @@ export const initialVideos: Video[] = [
     title: 'Morning Routine',
     titleHe: 'שגרת בוקר עם AI',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 30-60s. צלם: קפה בבוקר → פתיחת לפטופ → Claude מכין סיכום → אימון. Hook: "כל בוקר AI מכין לי פודקאסט חדשות + תפריט אוכל + תוכנית אימון. בלי שנגעתי בכלום."',
+    notes: 'B-Roll montage עם voiceover. מראה יום אמיתי.',
+    filmingGuide: `סוג: Reel 45-60 שניות, B-Roll + Voiceover
+מיקום: כמה לוקיישנים בבית + בחוץ
+
+שוטים שצריך לצלם (5-10 שניות כל אחד):
+1. ☕ הכנת קפה (close-up ידיים + כוס)
+2. 💻 פתיחת לפטופ, מסך Claude נראה
+3. 📱 הודעת בוקר טוב מClaude (close-up מסך)
+4. 🏋️ יציאה לאימון / אימון קצר
+5. 🍳 ארוחת בוקר עם ילדים
+6. 💼 ישיבה לעבודה, הכל מסודר על המסך
+
+⚠️ צלם כל שוט 2-3 פעמים!
+⚠️ צלם VERTICAL (9:16)!
+
+הקלטת Voiceover (בנפרד):
+- שב בחדר שקט עם מיקרופון
+- דבר בטון רגוע, בוקרי
+- הקלט עם Voice Memos באייפון
+
+עריכה:
+- שים B-Roll לפי סדר הvoiceover
+- הוסף captions בעברית
+- מוזיקה שקטה ברקע (lo-fi / chill)
+
+⏱️ צילום: 30 דקות | עריכה: 45 דקות`,
+    scripts: {
+      he: `כל בוקר AI מכין לי פודקאסט חדשות, תפריט אוכל, ותוכנית אימון. בלי שנגעתי בכלום.
+
+זה נראה ככה:
+
+שש בבוקר. קפה. פותח את הלפטופ. Claude כבר מוכן. סיכום חדשות. מזג אוויר. שלוש משימות דחופות.
+
+שבע. הולך לאימון. התוכנית כבר מוכנה. סטים, חזרות, זמני מנוחה - הכל.
+
+שמונה. ארוחת בוקר עם הילדים. תפריט שClaude הכין - מבוסס על מה שיש במקרר.
+
+תשע. נכנס לעבוד. כל המשימות מסודרות. מיילים מנוסחים. יום מתוכנן.
+
+כל הבוקר הזה? שעה וחצי. אפס מאמץ.
+
+זה חיים עם AI.`,
+      en: `Every morning, AI prepares my news podcast, meal plan, and workout. Without me touching anything.
+
+Here's what it looks like:
+
+6 AM. Coffee. Open the laptop. Claude is ready. News summary. Weather. Three urgent tasks.
+
+7 AM. Off to train. The plan is ready. Sets, reps, rest times - everything.
+
+8 AM. Breakfast with the kids. A menu Claude prepared - based on what's in the fridge.
+
+9 AM. Sit down to work. All tasks organized. Emails drafted. Day planned.
+
+This entire morning? An hour and a half. Zero effort.
+
+This is life with AI.`,
+      es: `Cada mañana, la IA me prepara un podcast de noticias, plan de comidas y entrenamiento. Sin tocar nada.
+
+Así se ve:
+
+6 AM. Café. Abro la laptop. Claude está listo. Resumen de noticias. Clima. Tres tareas urgentes.
+
+7 AM. A entrenar. El plan está listo. Series, repeticiones, descansos - todo.
+
+8 AM. Desayuno con los niños. Un menú que Claude preparó - basado en lo que hay en la nevera.
+
+9 AM. Me siento a trabajar. Todas las tareas organizadas. Emails redactados. Día planificado.
+
+¿Toda esta mañana? Una hora y media. Cero esfuerzo.
+
+Esto es vida con IA.`,
+    },
   },
   {
     id: 'v003',
@@ -26,7 +159,66 @@ export const initialVideos: Video[] = [
     title: 'Island English',
     titleHe: 'חיים באי - אנגלית',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 30-45s באנגלית. צלם: חוף, שקיעה, משפחה, עבודה מהלפטופ. Hook: "I moved my family to a Thai island and rebuilt my life with AI agents." CTA: Follow for the journey.',
+    notes: 'סרטון באנגלית לקהל בינלאומי. B-Roll יפה של קו פנגאן.',
+    filmingGuide: `סוג: Reel 30-45 שניות באנגלית, B-Roll + Voiceover
+מיקום: לוקיישנים מרהיבים בקו פנגאן!
+
+שוטים לצלם:
+1. 🌅 זריחה/שקיעה על הים
+2. 🌴 דקלים, ג'ונגל, שבילים
+3. 🏖️ חוף - ילדים משחקים / אתה הולך
+4. 💻 עבודה מהלפטופ עם נוף
+5. 👨‍👩‍👧‍👦 רגע משפחתי (אם מתאים)
+6. 🥊 אימון מוי תאי
+7. 🛵 נסיעה באופנוע (GoPro/מחזיק טלפון)
+
+⚠️ צלם ב-Golden Hour! (6-7 בוקר או 17-18 אחה"צ)
+⚠️ כל שוט 5-10 שניות, VERTICAL
+
+Voiceover:
+- הקלט באנגלית, טון רגוע ונעים
+- אל תנסה להישמע "אמריקאי" - המבטא שלך הוא חלק מהאותנטיות
+
+⏱️ צילום: 1-2 שעות (טיול עם אייפון) | עריכה: 30 דקות`,
+    scripts: {
+      he: `העברתי את המשפחה שלי לאי בתאילנד. ובניתי את החיים מחדש עם סוכני AI.
+
+אנשים שואלים: "איך? אתה מתכנת?"
+
+לא. בניתי עסק סולארי. שירתתי ביחידה מיוחדת. עברתי מה שעברתי.
+
+ויום אחד החלטתי: אני בוחר מחדש.
+
+קו פנגאן. משפחה. אימונים. עבודה חכמה.
+
+וAI? הוא מה שמאפשר את הכל.`,
+      en: `I moved my family to a Thai island. And rebuilt my life with AI agents.
+
+People ask: "How? Are you a programmer?"
+
+No. I built a solar company. I served in a special unit. I've been through things.
+
+And one day I decided: I'm choosing again.
+
+Koh Phangan. Family. Training. Smart work.
+
+And AI? That's what makes it all possible.
+
+Follow for the journey.`,
+      es: `Mudé a mi familia a una isla tailandesa. Y reconstruí mi vida con agentes de IA.
+
+La gente pregunta: "¿Cómo? ¿Eres programador?"
+
+No. Construí una empresa solar. Serví en una unidad especial. He pasado por cosas.
+
+Y un día decidí: elijo de nuevo.
+
+Koh Phangan. Familia. Entrenamiento. Trabajo inteligente.
+
+¿Y la IA? Es lo que hace todo posible.
+
+Sígueme en el viaje.`,
+    },
   },
   {
     id: 'v004',
@@ -34,7 +226,67 @@ export const initialVideos: Video[] = [
     title: 'Muay Thai',
     titleHe: 'מוי תאי ואופטימיזציה',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 30-45s. צלם: אימון מוי תאי (sparring/bag work/stretching). Hook: "אני מאמן מוי תאי בתאילנד, והAI שלי בנה לי את תוכנית האימון." הראה Claude עם תוכנית אימון.',
+    notes: 'סרטון כושר + AI. מראה את הקשר בין אופטימיזציה גופנית לאופטימיזציה עסקית.',
+    filmingGuide: `סוג: Reel 30-45 שניות, מיקס Talking Head + B-Roll אימון
+מיקום: חדר כושר / זירת מוי תאי / בבית
+
+שוטים לצלם:
+1. 🥊 Bag work - מכות על שק (wide shot + close-up)
+2. 🥊 Sparring (אם יש פרטנר) - 10 שניות
+3. 🤸 Stretching / warm-up
+4. 💪 Close-up כפפות, תחבושות, זיעה
+5. 📱 Claude עם תוכנית אימון על המסך (screen recording 5s)
+6. 🧑 Talking Head: פתיחה + סיום (בפינת צילום)
+
+מבנה:
+- [0-3s] Hook: "אני מאמן מוי תאי בתאילנד..."
+- [3-15s] B-Roll אימון
+- [15-25s] "...והAI שלי בנה לי את תוכנית האימון"
+- [25-35s] הראה מסך Claude + סיום
+
+⚠️ אם מצלם באולם - ביקוש אישור מבעל האולם!
+⏱️ צילום: 20 דקות | עריכה: 30 דקות`,
+    scripts: {
+      he: `אני מאמן מוי תאי בתאילנד. והAI שלי בנה לי את תוכנית האימון.
+
+לא מאמן אנושי. לא אפליקציה. Claude.
+
+נתתי לו: גובה, משקל, מטרות, ציוד זמין, כמה ימים בשבוע.
+
+מה קיבלתי? תוכנית אימון מלאה. סטים. חזרות. זמני מנוחה. תפריט תזונה ליום.
+
+וכל שבוע הוא מעדכן לפי ההתקדמות שלי.
+
+אופטימיזציה של גוף = אופטימיזציה של חיים.
+
+אם אתה רוצה לראות איך - לינק בביו.`,
+      en: `I train Muay Thai in Thailand. And my AI built my training plan.
+
+Not a human trainer. Not an app. Claude.
+
+I gave it: height, weight, goals, available equipment, days per week.
+
+What I got? A complete training plan. Sets. Reps. Rest times. Daily meal plan.
+
+And every week it updates based on my progress.
+
+Optimizing your body = optimizing your life.
+
+Want to see how? Link in bio.`,
+      es: `Entreno Muay Thai en Tailandia. Y mi IA construyó mi plan de entrenamiento.
+
+No un entrenador humano. No una app. Claude.
+
+Le di: altura, peso, objetivos, equipo disponible, días por semana.
+
+¿Qué recibí? Un plan de entrenamiento completo. Series. Repeticiones. Descansos. Plan de comidas.
+
+Y cada semana se actualiza según mi progreso.
+
+Optimizar tu cuerpo = optimizar tu vida.
+
+¿Quieres ver cómo? Link en bio.`,
+    },
   },
   {
     id: 'v005',
@@ -42,7 +294,60 @@ export const initialVideos: Video[] = [
     title: 'My AI Agents',
     titleHe: 'הסוכנים שלי',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 45-60s. צלם: Talking Head + Screen Recording מהיר. הראה 5 סוכנים שעובדים: חדשות, כושר, ניהול עסק, תוכן, ניטור. Hook: "5 AI agents run my life. Here\'s what each one does."',
+    notes: 'סרטון showcase - מראה את כל 5 הסוכנים בפעולה.',
+    filmingGuide: `סוג: Reel 45-60 שניות, Talking Head + Screen Recording
+מיקום: פינת צילום (talking head) + מסך (screen capture)
+
+מה לצלם:
+1. 🧑 Talking Head פתיחה (5s) - "5 AI agents run my life"
+2. 🖥️ Screen Recording מהיר של כל סוכן (5s כל אחד):
+   - סוכן חדשות: הראה פודקאסט שנוצר
+   - סוכן כושר: הראה תוכנית אימון
+   - סוכן עסקי: הראה מייל שנכתב ב-10 שניות
+   - סוכן תוכן: הראה רעיונות + תסריטים
+   - סוכן ניטור: הראה dashboard
+3. 🧑 Talking Head סיום (5s) - CTA
+
+הגדרות Screen Recording:
+- הגדל פונט ל-125%
+- Dark Mode
+- סגור כל טאב מיותר
+- הזז עכבר לאט!
+
+⏱️ צילום: 30 דקות (5 דקות talking head + 25 דקות screen) | עריכה: 45 דקות`,
+    scripts: {
+      he: ``,
+      en: `5 AI agents run my life. Here's what each one does.
+
+Number 1: News agent. Every morning, a personalized podcast. Headlines, weather, what matters to me.
+
+Number 2: Fitness agent. Workout plan, meal plan, updated weekly based on my progress.
+
+Number 3: Business agent. Writes emails, organizes tasks, prepares proposals. In 10 seconds.
+
+Number 4: Content agent. Ideas, scripts, captions, hashtags. Everything I need to post.
+
+Number 5: Monitoring agent. Tracks my solar business. Alerts me if something's off.
+
+5 agents. Zero employees. Full control.
+
+Want to build your first one? Link in bio.`,
+      es: `5 agentes de IA manejan mi vida. Esto es lo que hace cada uno.
+
+Número 1: Agente de noticias. Cada mañana, un podcast personalizado.
+
+Número 2: Agente de fitness. Plan de entrenamiento y comidas, actualizado semanalmente.
+
+Número 3: Agente de negocios. Escribe emails, organiza tareas, prepara propuestas. En 10 segundos.
+
+Número 4: Agente de contenido. Ideas, guiones, subtítulos, hashtags. Todo lo que necesito.
+
+Número 5: Agente de monitoreo. Rastrea mi negocio solar. Me alerta si algo falla.
+
+5 agentes. Cero empleados. Control total.
+
+¿Quieres construir el primero? Link en bio.`,
+    },
   },
   {
     id: 'v006',
@@ -50,7 +355,59 @@ export const initialVideos: Video[] = [
     title: 'הסוכנים בשבילי',
     titleHe: 'הסוכנים בשבילי',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 45-60s בעברית. גרסה עברית של v005. Talking Head + מסך. Hook: "5 סוכני AI מנהלים לי את החיים. הנה מה שכל אחד עושה." CTA: "רוצה גם? לינק בביו."',
+    notes: 'גרסה עברית של v005. אותו format, שפה אחרת.',
+    filmingGuide: `סוג: Reel 45-60 שניות בעברית, Talking Head + Screen Recording
+מיקום: אותו setup כמו v005!
+
+⚠️ צלם את זה מיד אחרי v005 - אותו setup, רק שפה אחרת!
+
+מבנה זהה ל-v005:
+1. Talking Head פתיחה
+2. Screen Recording של 5 סוכנים (אותם שוטים!)
+3. Talking Head סיום + CTA
+
+טיפ: תשתמש באותם screen recordings של v005. רק החלף את ה-Talking Head + voiceover לעברית.
+
+⏱️ 10 דקות נוספות (רק talking head + voiceover)`,
+    scripts: {
+      he: `5 סוכני AI מנהלים לי את החיים. הנה מה שכל אחד עושה.
+
+סוכן 1: חדשות. כל בוקר, פודקאסט מותאם אישית. כותרות, מזג אוויר, מה שחשוב לי.
+
+סוכן 2: כושר. תוכנית אימון, תפריט תזונה, מתעדכן כל שבוע לפי ההתקדמות שלי.
+
+סוכן 3: עסקי. כותב מיילים, מסדר משימות, מכין הצעות מחיר. ב-10 שניות.
+
+סוכן 4: תוכן. רעיונות, תסריטים, כיתובים, האשטגים. כל מה שצריך כדי לפרסם.
+
+סוכן 5: ניטור. עוקב אחרי העסק הסולארי שלי. מתריע אם משהו לא בסדר.
+
+5 סוכנים. אפס עובדים. שליטה מלאה.
+
+רוצה לבנות את הראשון? לינק בביו.`,
+      en: `5 AI agents run my life. Here's what each one does.
+
+Agent 1: News. Every morning, a personalized podcast.
+Agent 2: Fitness. Workout + meal plan, updated weekly.
+Agent 3: Business. Emails, tasks, proposals. In 10 seconds.
+Agent 4: Content. Ideas, scripts, captions, hashtags.
+Agent 5: Monitoring. Tracks my solar business.
+
+5 agents. Zero employees. Full control.
+
+Want to build your first one? Link in bio.`,
+      es: `5 agentes de IA manejan mi vida. Esto hace cada uno.
+
+Agente 1: Noticias. Podcast personalizado cada mañana.
+Agente 2: Fitness. Entrenamiento + comidas, actualizado semanalmente.
+Agente 3: Negocios. Emails, tareas, propuestas. En 10 segundos.
+Agente 4: Contenido. Ideas, guiones, subtítulos, hashtags.
+Agente 5: Monitoreo. Rastrea mi negocio solar.
+
+5 agentes. Cero empleados. Control total.
+
+¿Quieres construir el primero? Link en bio.`,
+    },
   },
   {
     id: 'v007',
@@ -58,7 +415,85 @@ export const initialVideos: Video[] = [
     title: 'Being Present',
     titleHe: 'להיות נוכח',
     stages: { script: true, film: false, edit: false, publish: false },
-    notes: 'Reel 30-45s. B-Roll: ים, ג׳ונגל, משפחה, שקיעה + voiceover. Hook: "איבדתי את אחי ב-7 באוקטובר. אחרי 400 יום מילואים, בחרתי מחדש." טון אישי, רגוע, אותנטי.',
+    notes: 'הסרטון הכי אישי. B-Roll בלבד + voiceover רגוע. ללא מצלמה ישירה.',
+    filmingGuide: `סוג: Reel 30-45 שניות, B-Roll בלבד + Voiceover
+מיקום: קו פנגאן - הלוקיישנים הכי יפים
+
+⚠️ זה הסרטון הכי אישי ורגיש. קח זמן, אל תמהר.
+
+שוטים לצלם (איטיים, cinematici):
+1. 🌊 גלים שוברים על החוף (15 שניות)
+2. 🌅 שקיעה מעל הים
+3. 🌴 ג'ונגל - אור חודר בין העלים
+4. 👨‍👧‍👦 ילדים משחקים (מרחוק, אינטימי)
+5. 🧘 אתה יושב/מביט לים (מהגב, silhouette)
+6. 👫 הליכה עם יעל (מרחוק)
+
+הגדרות:
+- Slow motion אם אפשר (iPhone: Slo-Mo 120fps)
+- Golden hour בלבד!
+- Horizontal movements (pan) - לא תזוזות חדות
+
+Voiceover:
+- שב לבד בחדר שקט
+- דבר לאט, רגוע, אישי
+- כאילו אתה מספר לחבר הכי טוב שלך
+- בסדר לעצור, לנשום, להמשיך
+
+⏱️ צילום: 1-2 שעות (טיול golden hour) | הקלטת voiceover: 10 דקות`,
+    scripts: {
+      he: `איבדתי את אחי ב-7 באוקטובר.
+
+אבידן. האח הכי קרוב אליי בעולם. הוא היה בנובה. הוא שלח לנו "אוהב אתכם" - אחד אחד. דיברנו שעתיים. ואז הקו נותק.
+
+אחרי שלושה ימים גילינו.
+
+אחרי זה? 400 יום מילואים. מלחמה בלבנון. רחוק מיעל ומהילדים.
+
+וכשחזרתי, שאלתי את עצמי: מה אני רוצה?
+
+לא מה אני חייב. מה אני רוצה.
+
+בחרתי מחדש. קו פנגאן. משפחה. קצב אחר.
+
+עכשיו? אני כאן. נוכח. עם הילדים, עם יעל, עם עצמי.
+
+וזה שווה הכל.`,
+      en: `I lost my brother on October 7th.
+
+Avidan. The closest person to me in the world. He was at Nova. He sent us "I love you" - one by one. We talked for two hours. Then the line went dead.
+
+Three days later, we found out.
+
+After that? 400 days of reserve duty. War in Lebanon. Far from my wife and kids.
+
+And when I came back, I asked myself: what do I want?
+
+Not what I have to do. What I want.
+
+I chose again. Koh Phangan. Family. A different pace.
+
+Now? I'm here. Present. With my kids, with my wife, with myself.
+
+And it's worth everything.`,
+      es: `Perdí a mi hermano el 7 de octubre.
+
+Avidan. La persona más cercana a mí en el mundo. Estaba en Nova. Nos envió "los amo" - uno por uno. Hablamos dos horas. Y la línea se cortó.
+
+Tres días después, supimos.
+
+¿Después? 400 días de servicio de reserva. Guerra en Líbano. Lejos de mi esposa e hijos.
+
+Y cuando volví, me pregunté: ¿qué quiero?
+
+No qué tengo que hacer. Qué quiero.
+
+Elegí de nuevo. Koh Phangan. Familia. Otro ritmo.
+
+¿Ahora? Estoy aquí. Presente. Con mis hijos, con mi esposa, conmigo mismo.
+
+Y vale todo.`,
+    },
   },
 ];
 

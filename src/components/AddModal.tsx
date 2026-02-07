@@ -78,6 +78,8 @@ export default function AddModal({ type, isOpen, onClose }: AddModalProps) {
           titleHe: videoTitle,
           stages: { script: false, film: false, edit: false, publish: false },
           notes: '',
+          filmingGuide: '',
+          scripts: { he: '', en: '', es: '' },
         });
         break;
       }

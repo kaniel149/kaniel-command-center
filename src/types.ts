@@ -1,3 +1,9 @@
+export interface VideoScripts {
+  he: string;
+  en: string;
+  es: string;
+}
+
 export interface Video {
   id: string;
   number: number;
@@ -10,6 +16,8 @@ export interface Video {
     publish: boolean;
   };
   notes: string;
+  filmingGuide: string;
+  scripts: VideoScripts;
 }
 
 export type TaskCategory = 'launch' | 'marketing' | 'technical';
@@ -32,6 +40,7 @@ export interface Idea {
   text: string;
   pillar: ContentPillar;
   createdAt: string;
+  audioUrl?: string;
 }
 
 export interface AppState {
