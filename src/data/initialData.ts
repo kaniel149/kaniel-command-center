@@ -1,7 +1,7 @@
 import type { Video, Task, Idea } from '../types';
 
 // Bump this version whenever initialData changes to force browser refresh
-export const DATA_VERSION = 2;
+export const DATA_VERSION = 3;
 
 export const initialVideos: Video[] = [
   {

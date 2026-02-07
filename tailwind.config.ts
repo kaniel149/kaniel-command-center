@@ -11,6 +11,7 @@ export default {
           border: '#2A2A2A',
           text: '#FFFFFF',
           muted: '#A0A0A0',
+          sub: '#C8C8C8',
           accent: '#0066FF',
           'accent-light': '#3388FF',
           success: '#22C55E',
